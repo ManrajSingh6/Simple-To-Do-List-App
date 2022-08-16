@@ -4,7 +4,6 @@ const ejs = require('ejs');
 const mongoose = require('mongoose');
 
 const app = express();
-const port = 3000;
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
@@ -56,6 +55,11 @@ app.post("/delete", function(req, res){
 
 });
 
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+
 app.listen(port, function(){
-    console.log("Connected to port: " + port);
+    console.log("Server has started.");
 });
