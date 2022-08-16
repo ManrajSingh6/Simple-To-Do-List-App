@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 // Connecting + creating a new DB
-mongoose.connect("mongodb://localhost:27017/listDB");
+mongoose.connect("mongodb+srv://admin-manraj:testPass123@cluster0.hdbi3g4.mongodb.net/listDB");
 
 const itemsSchema = new mongoose.Schema({
     name: {
